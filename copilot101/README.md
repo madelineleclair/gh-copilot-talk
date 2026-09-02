@@ -1,20 +1,17 @@
-# Code Smarter not Harder with GitHub Copilot 🤖
+# GitHub Copilot 101 🤖
 
-![GitHub Copilot](https://github.com/LadyKerr/mealmetrics-copilot/assets/47188731/fbeeed3f-7a00-4b01-90a5-a4ea495a0f1c)
+This directory contains an editable local copy of the [Copilot 101 gist](https://gist.github.com/AndreaGriffiths11/f9e625a573856fe5b2247e10beee89c3) as a standalone HTML slide deck.
 
-## What is GitHub Copilot?
+## Getting started locally
 
-GitHub Copilot is an AI pair programmer that helps you write code faster. GitHub Copilot draws context from the code you’re working on, suggesting whole lines or entire functions. It helps you quickly discover alternative ways to solve problems, write tests, and explore new APIs without having to tediously tailor a search for answers on the internet. GitHub Copilot is powered by OpenAI GPT-4(?), a new AI system created by OpenAI.
+- Run `npm install`.
+- Run `npm run dev`.
+- Open `http://localhost:3030`.
 
-You can use it in your favorite editor - Visual Studio, Visual Studio Code, many JetBrains IDEs (Pycharm, RubyMine, WebStorm, IntelliJ and more), Neovim and also works with Azure Data Studio.
+Edit `presentation.html` to change the slides. Refresh the browser to see changes. Use the keyboard arrow keys or space bar to navigate the presentation.
 
-You will install the AI assistant as an extension and if you're using jetbrains IDEs, you will install it as a plugin.
+## Building
 
-## Getting Started Locally
-- clone repo
-- `cd` into the project, then `cd` into `copilot-101` directory
-- open terminal and run `npm i`
-- to start presentation, run `npm run dev` this will open up the presentation for ya or you can click the link in your terminal
-- you can make changes to the slides by editing the `slides.md` file
+Run `npm run build` to copy `presentation.html` to `dist/index.html`. Netlify and Vercel use this command when deploying the deck.
 
-Learn more about slidev by visiting their docs site: https://sli.dev/guide/
+The previous Slidev deck remains in `slides.md` for reference, but it is no longer the deployment source.
