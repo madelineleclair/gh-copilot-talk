@@ -2353,61 +2353,6 @@
     </div>
   </section>
 
-  <!-- ===================== SLIDE 16: SDK ===================== -->
-  <section class="slide" id="slide-16" data-index="15">
-    <div class="eyebrow reveal d1">
-      <div class="eyebrow-line"></div> For Tool Builders
-    </div>
-    <h2 class="reveal d2">GitHub Copilot SDK</h2>
-
-    <div class="sdk-layout">
-      <div class="sdk-desc">
-        <p class="reveal d3">
-          Programmatic access to the <strong>full agent stack</strong> — not just completions or chat.
-          Agent mode, MCP tools, code review, all of it, available through code.
-        </p>
-        <p class="reveal d4" style="font-size:15px;">
-          Copilot doesn't have to live inside an IDE. Think internal CLIs, automation pipelines,
-          dashboards, CI/CD hooks. Anywhere you have a developer tool, you can embed Copilot.
-        </p>
-        <div class="lang-badges reveal d5">
-          <span class="lang-badge">Node.js</span>
-          <span class="lang-badge">Python</span>
-          <span class="lang-badge">Go</span>
-          <span class="lang-badge">.NET</span>
-        </div>
-        <div class="tag tag-amber reveal d6" style="margin-top:16px;display:inline-flex;">Technical Preview — Start
-          building today</div>
-      </div>
-
-      <div class="code-block reveal d3">
-        <div class="code-block-header">
-          <div class="code-block-dots">
-            <div class="code-block-dot" style="background:#FF5F56"></div>
-            <div class="code-block-dot" style="background:#FFBD2E"></div>
-            <div class="code-block-dot" style="background:#27C93F"></div>
-          </div>
-          issuecrush/server.js
-        </div>
-        <div class="code-block-body">
-          <span class="kw">const</span> { <span class="fn">CopilotClient</span> } = <span class="kw">await</span> <span class="fn">import</span>(<span
-            class="str">'@github/copilot-sdk'</span>);<br><br>
-          <span class="kw">const</span> client = <span class="kw">new</span> <span class="fn">CopilotClient</span>();<br>
-          <span class="kw">await</span> client.<span class="fn">start</span>();<br><br>
-          <span class="kw">const</span> session = <span class="kw">await</span> client.<span class="fn">createSession</span>({<br>
-          &nbsp;&nbsp;model: <span class="str">'gpt-4.1'</span>,<br>
-          });<br><br>
-          <span class="kw">const</span> response = <span class="kw">await</span> session.<span class="fn">sendAndWait</span>({<br>
-          &nbsp;&nbsp;prompt: <span class="str">`Summarize this GitHub issue for triage...`</span>,<br>
-          }, <span class="num">30000</span>);<br><br>
-          <span class="kw">const</span> summary = response.data.content;<br>
-          <span class="kw">await</span> session.<span class="fn">destroy</span>();<br>
-          <span class="kw">await</span> client.<span class="fn">stop</span>();
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== SLIDE 17: WHERE IT LIVES ===================== -->
   <section class="slide" id="slide-17" data-index="16">
     <div class="eyebrow reveal d1">
@@ -2701,7 +2646,7 @@
             entries.forEach(entry => {
               if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                const index = parseInt(entry.target.dataset.index);
+                const index = this.slides.indexOf(entry.target);
                 this.updateUI(index);
               }
             });
